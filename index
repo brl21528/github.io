@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+fieldset{border-color:darkgrey;
+         border-width:.1em;
+         background-color:white;
+         }
+legend{color:red;
+  font-size: 150%;
+  font-family:helvetica;
+  
+}
+#submit{position:relative;
+      left:2em
+      }
+
+#one {
+    padding:1.4em;  
+    background-color:lightgray;
+  
+    } 
+#two{padding:1em;
+  background-color:white}
+</style>
+</head>
+<body>
+<div>
+<div id="one">
+    <div id="two">
+  
+  <!-- shopping.html -->
+    <form action="" method="post" id="theForm">
+        <fieldset>
+          <Legend>Add an Employee</legend>
+            
+       
+         
+      
+      <div>
+        <label for="fname">First Name</label>
+        </br>
+        <input name="fname" id="fname">
+          </div>
+      
+      
+      <div>
+        <label for="lname">Last Name</label>
+        </br>
+        <input name="lname" id="lname">
+          </div>
+      
+      <div>
+        <label for="dept">Department</label>
+        </div>
+          
+        <div>  
+<select name="dept" id="dept">
+            
+<option value="Engineering">Engineering</option>
+<option value="English">English</option>
+<option value="Math">Math</option>
+<option value="Biology">Biology</option>
+            
+</select>
+</div>
+      
+      
+
+
+      
+      
+			
+         
+
+
+          
+    </br>
+          
+	<div>
+              <input type="submit" value="Submit" id="submit">
+      </div>
+  
+          
+      
+        </fieldset>
+  
+      
+ <h1 name=employeeAdd id=employeeAdd></h1>
+    <p1 name=displayName id=displayName></p1></br>
+  <p2 name=displayDept id=displayDept></p2></br>
+  <p3 name=displayId id=displayId></p3></br>
+<p4 name=displayDate id=displayDate></p4></br>
+    <p5 name=displayTotal id=displayTotal></p5>
+  
+    </form>
+    <script src="js/shopping.js"></script>
+  
+</div>
+</div>
+</div>
+<script id="jsbin-javascript">
+var employee = [];
+var unique = [];
+function calculate() {
+	'use scrict';
+    console.log("calculate()");
+  
+ 
+  
+  
+
+ 
+  
+
+  
+var pad = "00000000";
+var n =  Math.floor((Math.random() * 99999999) + 1);
+var result = (pad+n).slice(-pad.length);
+  
+  
+  
+  
+  
+  
+  var DateHolder = new Date();
+var hireDateString = DateHolder.toString();
+hiredate = hireDateString.slice(0,15);
+  
+  
+  
+  
+  
+  
+  
+  fname = document.getElementById('fname').value;
+
+
+lname = document.getElementById('lname').value;
+
+
+dept = document.getElementById('dept').value;
+  
+  
+  var person = {
+    firstName:document.getElementById('fname').value,
+    lastName:document.getElementById('lname').value,
+    department:document.getElementById('dept').value,
+   employeeid:result,
+   hiredate:hiredate,
+};
+
+  employee.push(person);
+  
+  
+  
+  
+ 
+  
+
+     console.log(employee);
+  console.log("total employees = "+employee.length);
+  
+  
+  
+  
+  
+  fullName = lname +", "+ fname;  
+  document.getElementById("employeeAdd").innerHTML="Employee Added";
+document.getElementById("displayName").innerHTML="Name: " + fullName;
+document.getElementById("displayDept").innerHTML="Department: " + dept;
+  document.getElementById("displayId").innerHTML="Employee ID: " + result;
+  document.getElementById("displayDate").innerHTML="Hire Date: " + hiredate;
+  
+document.getElementById("displayTotal").innerHTML="Total Employees: " + employee.length;  
+  
+ 
+  
+
+  
+  
+  
+  
+  
+  
+	return false;    
+} // End of calculate() function.
+
+function init() {
+	'use strict';
+    console.log("init()");
+	document.getElementById('theForm').onsubmit = calculate;
+} // End of init() function.
+console.log("page is loaded.");
+window.onload = init;
+</script>
+
+
+<script id="jsbin-source-css" type="text/css">fieldset{border-color:darkgrey;
+         border-width:.1em;
+         background-color:white;
+         }
+legend{color:red;
+  font-size: 150%;
+  font-family:helvetica;
+  
+}
+#submit{position:relative;
+      left:2em
+      }
+
+#one {
+    padding:1.4em;  
+    background-color:lightgray;
+  
+    } 
+#two{padding:1em;
+  background-color:white}
+
+
+</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">
+var employee = [];
+var unique = [];
+function calculate() {
+	'use scrict';
+    console.log("calculate()");
+  
+ 
+  
+  
+
+ 
+  
+
+  
+var pad = "00000000";
+var n =  Math.floor((Math.random() * 99999999) + 1);
+var result = (pad+n).slice(-pad.length);
+  
+  
+  
+  
+  
+  
+  var DateHolder = new Date();
+var hireDateString = DateHolder.toString();
+hiredate = hireDateString.slice(0,15);
+  
+  
+  
+  
+  
+  
+  
+  fname = document.getElementById('fname').value;
+
+
+lname = document.getElementById('lname').value;
+
+
+dept = document.getElementById('dept').value;
+  
+  
+  var person = {
+    firstName:document.getElementById('fname').value,
+    lastName:document.getElementById('lname').value,
+    department:document.getElementById('dept').value,
+   employeeid:result,
+   hiredate:hiredate,
+};
+
+  employee.push(person);
+  
+  
+  
+  
+ 
+  
+
+     console.log(employee);
+  console.log("total employees = "+employee.length);
+  
+  
+  
+  
+  
+  fullName = lname +", "+ fname;  
+  document.getElementById("employeeAdd").innerHTML="Employee Added";
+document.getElementById("displayName").innerHTML="Name: " + fullName;
+document.getElementById("displayDept").innerHTML="Department: " + dept;
+  document.getElementById("displayId").innerHTML="Employee ID: " + result;
+  document.getElementById("displayDate").innerHTML="Hire Date: " + hiredate;
+  
+document.getElementById("displayTotal").innerHTML="Total Employees: " + employee.length;  
+  
+ 
+  
+
+  
+  
+  
+  
+  
+  
+	return false;    
+} // End of calculate() function.
+
+function init() {
+	'use strict';
+    console.log("init()");
+	document.getElementById('theForm').onsubmit = calculate;
+} // End of init() function.
+console.log("page is loaded.");
+window.onload = init;</script></body>
+</html>
